@@ -4,8 +4,8 @@ A simple http-server with a user API
 
 ##  TODO (homework)
 
-* Clone this repo and using [duplicating](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository) create your own repository on GitHub or GitLab
-* **Important!** Make your repository **PRIVATE**
+* Clone this repo and using [duplicating](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository) create your own repository on GitHub or GitLab (Done)
+* **Important!** Make your repository **PRIVATE** (done)
 * Find all the TODO comments and enrich this app
 * If you have questions, ask me by email sergei@adaltas.com (link your private repo, if you have technical questions and invite me to you project)
 
@@ -29,7 +29,7 @@ npm install
 npm start
 ```
 
-Go to `http://localhost:3000`
+Go to `http://localhost:3003`
 
 ### Using Postman app
 
@@ -63,16 +63,10 @@ npm test
 
 ## Author
 
-Sergei Kudinov   
-sergei@adaltas.com
+Hannachi Nada  
+nada.hannachi@edu.ece.fr
 
-update 2
+Ilhem Laroussi
+ilhem.laroussi@edu.ece.fr
 
-change for rebase
 
-<<<<<<< HEAD
-change for rebase 2
-=======
-
-change for rebase 3
->>>>>>> rebase 3
