@@ -36,7 +36,7 @@ Go to `http://localhost:3003`
 1. POST Create user:
 
 ```
-http://localhost:3000/user/
+http://localhost:3003/user/
 ```
 
 Body parameters:
@@ -51,7 +51,7 @@ Body parameters:
 2. GET user by username
 
 ```
-http://localhost:3000/user/sergkudinov
+http://localhost:3003/user/sergkudinov
 ```
 
 ## Developer

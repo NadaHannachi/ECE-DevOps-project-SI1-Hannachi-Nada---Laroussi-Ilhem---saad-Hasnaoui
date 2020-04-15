@@ -17,16 +17,16 @@ describe('Users REST API', () => {
 
     it('create a new user', (done) => {
       const user = {
-        username: 'sergkudinov',
-        firstname: 'Sergei',
-        lastname: 'Kudinov'
+        username: 'NadaIlhem',
+        firstname: 'Nada',
+        lastname: 'Hannachi'
       }
       chai.request(app)
         .post('/user')
         .send(user)
         .then((res) => {
           chai.expect(res).to.have.status(201)
-          chai.expect(res.body.username).to.equal('sergkudinov')
+          chai.expect(res.body.username).to.equal('NadaIlhem')
           chai.expect(res).to.be.json
           done()
         })
@@ -38,5 +38,7 @@ describe('Users REST API', () => {
 
   describe('GET /user', ()=> {
     // TODO Create test for the get method
+   
   })
-})
+  })
+

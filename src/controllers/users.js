@@ -27,5 +27,14 @@ module.exports = {
     // 1. Read the file
     // 2. Check every line in the loop ("for")
     // 3. Return an onject with user information, or null
+    let userObj=Lookfor(username)
+    if(userObj==null){
+      return callback(new Error("user not found"),null)
+
+    }else{
+      callback(null,userObj)
+    }
   }
 }
+
+exports.Lookfor=this.Lookfor;
