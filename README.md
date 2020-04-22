@@ -54,6 +54,20 @@ Body parameters:
 http://localhost:3003/user/sergkudinov
 ```
 
+3. Travis CI: Continuous Integration Platform
+
+Automates the Execution of all codes at the same time with each change of source code, checks that everything works well.
+
+This system retrieves the code via the Github repository.
+
+we have created a .travis.yml file where we explain the language type and how to run etc.
+
+4. CONTINUOUS DELIVERY
+
+Once the code is tested and built, we deploy the application with Heroku .
+
+Once we have both tools, we can get the key and encrypted and add it to the .travis.yml/ file.
+
 ## Developer
 
 Run tests:
@@ -70,3 +84,4 @@ Ilhem Laroussi
 ilhem.laroussi@edu.ece.fr
 
 
+````

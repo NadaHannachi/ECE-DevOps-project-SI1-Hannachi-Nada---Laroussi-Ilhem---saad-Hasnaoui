@@ -38,6 +38,7 @@ describe('Users REST API', () => {
 
   describe('GET /user', ()=> {
     // TODO Create test for the get method
+  
    
   })
   })
