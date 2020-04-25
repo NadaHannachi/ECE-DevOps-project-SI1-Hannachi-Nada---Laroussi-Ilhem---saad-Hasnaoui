@@ -37,7 +37,7 @@ describe('Users', () => {
         expect(err).to.not.be.equal(null)
         expect(result).to.be.equal(null)
         done()
-      })
+      }) 
     })
 
     it('avoid creating an existing user', (done)=> {

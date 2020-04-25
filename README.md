@@ -68,6 +68,10 @@ Once the code is tested and built, we deploy the application with Heroku .
 
 Once we have both tools, we can get the key and encrypted and add it to the .travis.yml/ file.
 
+5. Docker 
+
+
+
 ## Developer
 
 Run tests:

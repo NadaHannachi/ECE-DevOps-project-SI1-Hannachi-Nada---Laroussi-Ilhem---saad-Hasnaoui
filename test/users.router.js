@@ -38,7 +38,11 @@ describe('Users REST API', () => {
 
   describe('GET /user', ()=> {
     // TODO Create test for the get method
-  
+    chai.request(app)
+      .get('/',function(req,res){
+        
+
+      })
    
   })
   })
