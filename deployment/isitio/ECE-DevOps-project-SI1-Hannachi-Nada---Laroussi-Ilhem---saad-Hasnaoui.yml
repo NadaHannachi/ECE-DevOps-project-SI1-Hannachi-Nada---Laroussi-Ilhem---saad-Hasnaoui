@@ -1,0 +1,94 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui
+  labels:
+    app: ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui
+    service: ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui
+spec:
+  ports:
+  - port: 3000
+    name: http
+  selector:
+    app: ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: app-ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui
+  labels:
+    account: ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui-v1
+  labels:
+    app: ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui
+        version: v1
+    spec:
+      serviceAccountName: app-ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui
+      containers:
+      - name: ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui
+        image: docker.io/HannachiNada/ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui:v1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+        volumeMounts:
+        - name: user-storage
+          mountPath: /usr/src/app/db
+      volumes:
+      - name: user-storage
+        hostPath:
+          # directory location on host
+          path: /Users/HannachiNada/tmp
+          # this field is optional
+          type: Directory
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui-v2
+  labels:
+    app: ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui
+    version: v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui
+        version: v2
+    spec:
+      serviceAccountName: app-ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui
+      containers:
+      - name: ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui
+        image: docker.io/HannachiNada/ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui:v2
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+        volumeMounts:
+        - name: user-storage
+          mountPath: /usr/src/app/db
+      volumes:
+      - name: user-storage
+        hostPath:
+          
+          path: /Users/HannachiNada/tmp
+          # this field is optional
+          type: Directory

@@ -1,0 +1,25 @@
+  
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui
+spec:
+  hosts:
+    - "*"
+  gateways:
+  - ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui-gateway
+  http:
+  - match:
+    - uri:
+        exact: /
+    - uri:
+        prefix: /user
+    route:
+      - destination:
+          host: ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui
+          subset: v1
+        weight: 50
+      - destination:
+          host: ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui
+          subset: v2
+        weight: 50

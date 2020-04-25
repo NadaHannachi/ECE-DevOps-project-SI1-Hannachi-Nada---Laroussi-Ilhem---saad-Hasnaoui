@@ -55,4 +55,4 @@ spec:
       
         image: HannachiNada/ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 8000

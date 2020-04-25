@@ -1,0 +1,35 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: ece-userapi-gateway
+spec:
+  selector:
+    istio: ingressgateway 
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui-gateway
+  http:
+  - match:
+    - uri:
+        exact: /
+    - uri:
+        prefix: /user
+    route:
+    - destination:
+        host: ECE-DevOps-project-SI1-Hannachi-Nada---Laroussi-Ilhem---saad-Hasnaoui
+        port:
+          number: 3000
