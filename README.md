@@ -73,8 +73,13 @@ Once we have both tools, we can get the key and encrypted and add it to the .tra
 configuration on Docker-compose.yml and Dockerfile
 
 6.Kubernetes
+
+Container-orchestration system for automating application deployment, scaling, and management. It was originally designed by Google, and is now maintained by the Cloud Native Computing Foundation. 
+
 7.ISTIO
+Istio makes it easy to create a network of deployed services with rich routing, load balancing, service-to-service authentication, monitoring, and more - all without any changes to the application code. Istio strives to provide these benefits with minimal resource overhead and aims to support very large meshes with high request rates while adding minimal latency.
 8.Ansible
+software provisioning, configuration management, and application-deployment tool
 
 
 ## Developer

@@ -1,40 +1,38 @@
-const configure = require('../configure')
-const fs = require('fs')
 const path = require('path')
+const fs = require('fs')
 const os = require('os')
+
+configure = require('../configure')
+conig = configure()
+
 
 module.exports = {
   create: (user, callback) => {
+    if (!user.username) return callback(new Error('Wrong user parameter'), null)
 
-    if(!user.username)
-      return callback(new Error("Wrong user parameters"), null)
-
-    // Define the file for storing users information
-    config = configure()
-    const usersFile = path.join(config.users.db_dir, 'users')
-
-    // Create user string from the json object
-    // const strUser = user.username + ':' + user.firstname + ':' + user.lastname + os.EOL
-    const strUser = `${user.username}:${user.firstname}:${user.lastname}${os.EOL}`
-
-    fs.appendFile(usersFile, strUser, (err) => {
+    // TODO check if user already exists
+    strUser = `${user.username}:${user.firstname}:${user.lastname}${os.EOL}`
+    fs.appendFile(path.join(conig.users.db_dir, 'users'), strUser, (err) => {
       if (err) throw err
       callback(null, user.username)
     })
   },
   get: (username, callback) => {
     // TODO create this method
+    console.log(username);
     // 1. Read the file
-    // 2. Check every line in the loop ("for")
-    // 3. Return an onject with user information, or null
-    let userObj=Lookfor(username)
-    if(userObj==null){
-      return callback(new Error("user not found"),null)
-
-    }else{
-      callback(null,userObj)
-    }
+    fs.readFile(path.join(conig.users.db_dir, 'users'), (err, data) => {
+      let users = data.toString();
+      let allusers = users.split("\n");
+      // 2. Check every line in the loop ("for")
+      for (user of allusers) {
+        let myUser= user.split(":")
+        if (myUser[0] === username) {
+          // 3. Return an onject with user information, or null
+        }
+      }
+      if (err) throw err
+    })
   }
 }
-
 exports.Lookfor=this.Lookfor;
